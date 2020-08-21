@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch01/Painter/Painter.iml" filepath="$PROJECT_DIR$/textbook_examples/ch01/Painter/Painter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch02/ex02_06/ex02_06.iml" filepath="$PROJECT_DIR$/textbook_examples/ch02/ex02_06/ex02_06.iml" />
       <module fileurl="file://$PROJECT_DIR$/extra_credit/extra_credit.iml" filepath="$PROJECT_DIR$/extra_credit/extra_credit.iml" />
       <module fileurl="file://$PROJECT_DIR$/fall2020swd.iml" filepath="$PROJECT_DIR$/fall2020swd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch02/fig02_01/fig02_01.iml" filepath="$PROJECT_DIR$/textbook_examples/ch02/fig02_01/fig02_01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch02/fig02_03/fig02_03.iml" filepath="$PROJECT_DIR$/textbook_examples/ch02/fig02_03/fig02_03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch02/fig02_04/fig02_04.iml" filepath="$PROJECT_DIR$/textbook_examples/ch02/fig02_04/fig02_04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch02/fig02_06/fig02_06.iml" filepath="$PROJECT_DIR$/textbook_examples/ch02/fig02_06/fig02_06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch02/fig02_07/fig02_07.iml" filepath="$PROJECT_DIR$/textbook_examples/ch02/fig02_07/fig02_07.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch02/fig02_15/fig02_15.iml" filepath="$PROJECT_DIR$/textbook_examples/ch02/fig02_15/fig02_15.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch03/fig03_01-02/fig03_01-02.iml" filepath="$PROJECT_DIR$/textbook_examples/ch03/fig03_01-02/fig03_01-02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch03/fig03_05-06/fig03_05-06.iml" filepath="$PROJECT_DIR$/textbook_examples/ch03/fig03_05-06/fig03_05-06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch03/fig03_08-09/fig03_08-09.iml" filepath="$PROJECT_DIR$/textbook_examples/ch03/fig03_08-09/fig03_08-09.iml" />
       <module fileurl="file://$PROJECT_DIR$/oral_exam1/oral_exam1.iml" filepath="$PROJECT_DIR$/oral_exam1/oral_exam1.iml" />
       <module fileurl="file://$PROJECT_DIR$/oral_exam2/oral_exam2.iml" filepath="$PROJECT_DIR$/oral_exam2/oral_exam2.iml" />
       <module fileurl="file://$PROJECT_DIR$/quizzes/quizzes.iml" filepath="$PROJECT_DIR$/quizzes/quizzes.iml" />
