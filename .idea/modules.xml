@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch22/BallAnimationTimer/BallAnimationTimer.iml" filepath="$PROJECT_DIR$/textbook_examples/ch22/BallAnimationTimer/BallAnimationTimer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch22/BasicShapes/BasicShapes.iml" filepath="$PROJECT_DIR$/textbook_examples/ch22/BasicShapes/BasicShapes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch22/CanvasShapes/CanvasShapes.iml" filepath="$PROJECT_DIR$/textbook_examples/ch22/CanvasShapes/CanvasShapes.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch13/ColorChooser/ColorChooser.iml" filepath="$PROJECT_DIR$/textbook_examples/ch13/ColorChooser/ColorChooser.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch13/CoverViewer/CoverViewer.iml" filepath="$PROJECT_DIR$/textbook_examples/ch13/CoverViewer/CoverViewer.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch13/CoverViewerCustomListView/CoverViewerCustomListView.iml" filepath="$PROJECT_DIR$/textbook_examples/ch13/CoverViewerCustomListView/CoverViewerCustomListView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch22/DrawStars/DrawStars.iml" filepath="$PROJECT_DIR$/textbook_examples/ch22/DrawStars/DrawStars.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch04/Fig04_04-05/Fig04_04-05.iml" filepath="$PROJECT_DIR$/textbook_examples/ch04/Fig04_04-05/Fig04_04-05.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch04/Fig04_08/Fig04_08.iml" filepath="$PROJECT_DIR$/textbook_examples/ch04/Fig04_08/Fig04_08.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch04/Fig04_10/Fig04_10.iml" filepath="$PROJECT_DIR$/textbook_examples/ch04/Fig04_10/Fig04_10.iml" />
@@ -13,21 +17,38 @@
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch10/Fig10_01/Fig10_01.iml" filepath="$PROJECT_DIR$/textbook_examples/ch10/Fig10_01/Fig10_01.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch10/Fig10_04_09/Fig10_04_09.iml" filepath="$PROJECT_DIR$/textbook_examples/ch10/Fig10_04_09/Fig10_04_09.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch10/Fig10_11_14/Fig10_11_14.iml" filepath="$PROJECT_DIR$/textbook_examples/ch10/Fig10_11_14/Fig10_11_14.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch19/Fig19_02/Fig19_02.iml" filepath="$PROJECT_DIR$/textbook_examples/ch19/Fig19_02/Fig19_02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch19/Fig19_03/Fig19_03.iml" filepath="$PROJECT_DIR$/textbook_examples/ch19/Fig19_03/Fig19_03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch19/Fig19_04/Fig19_04.iml" filepath="$PROJECT_DIR$/textbook_examples/ch19/Fig19_04/Fig19_04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch19/Fig19_05/Fig19_05.iml" filepath="$PROJECT_DIR$/textbook_examples/ch19/Fig19_05/Fig19_05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch19/Fig19_06/Fig19_06.iml" filepath="$PROJECT_DIR$/textbook_examples/ch19/Fig19_06/Fig19_06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch22/FontCSS/FontCSS.iml" filepath="$PROJECT_DIR$/textbook_examples/ch22/FontCSS/FontCSS.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch04/GUIGraphicsCaseStudy04/GUIGraphicsCaseStudy04.iml" filepath="$PROJECT_DIR$/textbook_examples/ch04/GUIGraphicsCaseStudy04/GUIGraphicsCaseStudy04.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch05/GUIGraphicsCaseStudy05/GUIGraphicsCaseStudy05.iml" filepath="$PROJECT_DIR$/textbook_examples/ch05/GUIGraphicsCaseStudy05/GUIGraphicsCaseStudy05.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch06/GUIGraphicsCaseStudy06/GUIGraphicsCaseStudy06.iml" filepath="$PROJECT_DIR$/textbook_examples/ch06/GUIGraphicsCaseStudy06/GUIGraphicsCaseStudy06.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch07/GUIGraphicsCaseStudy07/GUIGraphicsCaseStudy07.iml" filepath="$PROJECT_DIR$/textbook_examples/ch07/GUIGraphicsCaseStudy07/GUIGraphicsCaseStudy07.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch08/GUIGraphicsCaseStudy08/GUIGraphicsCaseStudy08.iml" filepath="$PROJECT_DIR$/textbook_examples/ch08/GUIGraphicsCaseStudy08/GUIGraphicsCaseStudy08.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch01/Painter/Painter.iml" filepath="$PROJECT_DIR$/textbook_examples/ch01/Painter/Painter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch22/PolyShapes/PolyShapes.iml" filepath="$PROJECT_DIR$/textbook_examples/ch22/PolyShapes/PolyShapes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch15/SerializationApps/SerializationApps.iml" filepath="$PROJECT_DIR$/textbook_examples/ch15/SerializationApps/SerializationApps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch15/TextFileApps/TextFileApps.iml" filepath="$PROJECT_DIR$/textbook_examples/ch15/TextFileApps/TextFileApps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch22/ThreeDimensionalShapes/ThreeDimensionalShapes.iml" filepath="$PROJECT_DIR$/textbook_examples/ch22/ThreeDimensionalShapes/ThreeDimensionalShapes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch22/TimelineAnimation/TimelineAnimation.iml" filepath="$PROJECT_DIR$/textbook_examples/ch22/TimelineAnimation/TimelineAnimation.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch12/TipCalculator/TipCalculator.iml" filepath="$PROJECT_DIR$/textbook_examples/ch12/TipCalculator/TipCalculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch17/TipCalculator/TipCalculator1.iml" filepath="$PROJECT_DIR$/textbook_examples/ch17/TipCalculator/TipCalculator1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch22/TransitionAnimations/TransitionAnimations.iml" filepath="$PROJECT_DIR$/textbook_examples/ch22/TransitionAnimations/TransitionAnimations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch22/VideoPlayer/VideoPlayer.iml" filepath="$PROJECT_DIR$/textbook_examples/ch22/VideoPlayer/VideoPlayer.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch02/ex02_06/ex02_06.iml" filepath="$PROJECT_DIR$/textbook_examples/ch02/ex02_06/ex02_06.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch04/ex04_06/ex04_06.iml" filepath="$PROJECT_DIR$/textbook_examples/ch04/ex04_06/ex04_06.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch04/ex04_16/ex04_16.iml" filepath="$PROJECT_DIR$/textbook_examples/ch04/ex04_16/ex04_16.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch04/ex04_25/ex04_25.iml" filepath="$PROJECT_DIR$/textbook_examples/ch04/ex04_25/ex04_25.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch04/ex04_26/ex04_26.iml" filepath="$PROJECT_DIR$/textbook_examples/ch04/ex04_26/ex04_26.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch05/ex05_10/ex05_10.iml" filepath="$PROJECT_DIR$/textbook_examples/ch05/ex05_10/ex05_10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch18/ex18_12/ex18_12.iml" filepath="$PROJECT_DIR$/textbook_examples/ch18/ex18_12/ex18_12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch18/ex18_13/ex18_13.iml" filepath="$PROJECT_DIR$/textbook_examples/ch18/ex18_13/ex18_13.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch06/exercise06_03/exercise06_03.iml" filepath="$PROJECT_DIR$/textbook_examples/ch06/exercise06_03/exercise06_03.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch06/exercise06_06/exercise06_06.iml" filepath="$PROJECT_DIR$/textbook_examples/ch06/exercise06_06/exercise06_06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch17/exercises/exercises.iml" filepath="$PROJECT_DIR$/textbook_examples/ch17/exercises/exercises.iml" />
       <module fileurl="file://$PROJECT_DIR$/extra_credit/extra_credit.iml" filepath="$PROJECT_DIR$/extra_credit/extra_credit.iml" />
       <module fileurl="file://$PROJECT_DIR$/fall2020swd.iml" filepath="$PROJECT_DIR$/fall2020swd.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch02/fig02_01/fig02_01.iml" filepath="$PROJECT_DIR$/textbook_examples/ch02/fig02_01/fig02_01.iml" />
@@ -93,6 +114,74 @@
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch11/fig11_06/fig11_06.iml" filepath="$PROJECT_DIR$/textbook_examples/ch11/fig11_06/fig11_06.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch11/fig11_07/fig11_07.iml" filepath="$PROJECT_DIR$/textbook_examples/ch11/fig11_07/fig11_07.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch11/fig11_08/fig11_08.iml" filepath="$PROJECT_DIR$/textbook_examples/ch11/fig11_08/fig11_08.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch14/fig14_01/fig14_01.iml" filepath="$PROJECT_DIR$/textbook_examples/ch14/fig14_01/fig14_01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch14/fig14_02/fig14_02.iml" filepath="$PROJECT_DIR$/textbook_examples/ch14/fig14_02/fig14_02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch14/fig14_03/fig14_03.iml" filepath="$PROJECT_DIR$/textbook_examples/ch14/fig14_03/fig14_03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch14/fig14_04/fig14_04.iml" filepath="$PROJECT_DIR$/textbook_examples/ch14/fig14_04/fig14_04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch14/fig14_05/fig14_05.iml" filepath="$PROJECT_DIR$/textbook_examples/ch14/fig14_05/fig14_05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch14/fig14_06/fig14_06.iml" filepath="$PROJECT_DIR$/textbook_examples/ch14/fig14_06/fig14_06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch14/fig14_07/fig14_07.iml" filepath="$PROJECT_DIR$/textbook_examples/ch14/fig14_07/fig14_07.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch14/fig14_08/fig14_08.iml" filepath="$PROJECT_DIR$/textbook_examples/ch14/fig14_08/fig14_08.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch14/fig14_09/fig14_09.iml" filepath="$PROJECT_DIR$/textbook_examples/ch14/fig14_09/fig14_09.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch14/fig14_10/fig14_10.iml" filepath="$PROJECT_DIR$/textbook_examples/ch14/fig14_10/fig14_10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch14/fig14_11/fig14_11.iml" filepath="$PROJECT_DIR$/textbook_examples/ch14/fig14_11/fig14_11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch14/fig14_12/fig14_12.iml" filepath="$PROJECT_DIR$/textbook_examples/ch14/fig14_12/fig14_12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch14/fig14_13/fig14_13.iml" filepath="$PROJECT_DIR$/textbook_examples/ch14/fig14_13/fig14_13.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch14/fig14_14/fig14_14.iml" filepath="$PROJECT_DIR$/textbook_examples/ch14/fig14_14/fig14_14.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch14/fig14_15/fig14_15.iml" filepath="$PROJECT_DIR$/textbook_examples/ch14/fig14_15/fig14_15.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch14/fig14_16/fig14_16.iml" filepath="$PROJECT_DIR$/textbook_examples/ch14/fig14_16/fig14_16.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch14/fig14_17/fig14_17.iml" filepath="$PROJECT_DIR$/textbook_examples/ch14/fig14_17/fig14_17.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch14/fig14_18/fig14_18.iml" filepath="$PROJECT_DIR$/textbook_examples/ch14/fig14_18/fig14_18.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch14/fig14_20_21/fig14_20_21.iml" filepath="$PROJECT_DIR$/textbook_examples/ch14/fig14_20_21/fig14_20_21.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch14/fig14_23/fig14_23.iml" filepath="$PROJECT_DIR$/textbook_examples/ch14/fig14_23/fig14_23.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch14/fig14_24/fig14_24.iml" filepath="$PROJECT_DIR$/textbook_examples/ch14/fig14_24/fig14_24.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch15/fig15_02/fig15_02.iml" filepath="$PROJECT_DIR$/textbook_examples/ch15/fig15_02/fig15_02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch15/fig15_14-15/fig15_14-15.iml" filepath="$PROJECT_DIR$/textbook_examples/ch15/fig15_14-15/fig15_14-15.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch16/fig16_02/fig16_02.iml" filepath="$PROJECT_DIR$/textbook_examples/ch16/fig16_02/fig16_02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch16/fig16_03/fig16_03.iml" filepath="$PROJECT_DIR$/textbook_examples/ch16/fig16_03/fig16_03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch16/fig16_04/fig16_04.iml" filepath="$PROJECT_DIR$/textbook_examples/ch16/fig16_04/fig16_04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch16/fig16_06/fig16_06.iml" filepath="$PROJECT_DIR$/textbook_examples/ch16/fig16_06/fig16_06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch16/fig16_07/fig16_07.iml" filepath="$PROJECT_DIR$/textbook_examples/ch16/fig16_07/fig16_07.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch16/fig16_08_09/fig16_08_09.iml" filepath="$PROJECT_DIR$/textbook_examples/ch16/fig16_08_09/fig16_08_09.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch16/fig16_10/fig16_10.iml" filepath="$PROJECT_DIR$/textbook_examples/ch16/fig16_10/fig16_10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch16/fig16_11/fig16_11.iml" filepath="$PROJECT_DIR$/textbook_examples/ch16/fig16_11/fig16_11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch16/fig16_12/fig16_12.iml" filepath="$PROJECT_DIR$/textbook_examples/ch16/fig16_12/fig16_12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch16/fig16_13/fig16_13.iml" filepath="$PROJECT_DIR$/textbook_examples/ch16/fig16_13/fig16_13.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch16/fig16_14/fig16_14.iml" filepath="$PROJECT_DIR$/textbook_examples/ch16/fig16_14/fig16_14.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch16/fig16_15/fig16_15.iml" filepath="$PROJECT_DIR$/textbook_examples/ch16/fig16_15/fig16_15.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch16/fig16_16/fig16_16.iml" filepath="$PROJECT_DIR$/textbook_examples/ch16/fig16_16/fig16_16.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch16/fig16_17/fig16_17.iml" filepath="$PROJECT_DIR$/textbook_examples/ch16/fig16_17/fig16_17.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch16/fig16_20/fig16_20.iml" filepath="$PROJECT_DIR$/textbook_examples/ch16/fig16_20/fig16_20.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch17/fig17_03/fig17_03.iml" filepath="$PROJECT_DIR$/textbook_examples/ch17/fig17_03/fig17_03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch17/fig17_04/fig17_04.iml" filepath="$PROJECT_DIR$/textbook_examples/ch17/fig17_04/fig17_04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch17/fig17_07/fig17_07.iml" filepath="$PROJECT_DIR$/textbook_examples/ch17/fig17_07/fig17_07.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch17/fig17_08/fig17_08.iml" filepath="$PROJECT_DIR$/textbook_examples/ch17/fig17_08/fig17_08.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch17/fig17_09/fig17_09.iml" filepath="$PROJECT_DIR$/textbook_examples/ch17/fig17_09/fig17_09.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch17/fig17_11/fig17_11.iml" filepath="$PROJECT_DIR$/textbook_examples/ch17/fig17_11/fig17_11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch17/fig17_12/fig17_12.iml" filepath="$PROJECT_DIR$/textbook_examples/ch17/fig17_12/fig17_12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch17/fig17_13-21/fig17_13-21.iml" filepath="$PROJECT_DIR$/textbook_examples/ch17/fig17_13-21/fig17_13-21.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch17/fig17_22/fig17_22.iml" filepath="$PROJECT_DIR$/textbook_examples/ch17/fig17_22/fig17_22.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch17/fig17_24/fig17_24.iml" filepath="$PROJECT_DIR$/textbook_examples/ch17/fig17_24/fig17_24.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch18/fig18_03/fig18_03.iml" filepath="$PROJECT_DIR$/textbook_examples/ch18/fig18_03/fig18_03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch18/fig18_04/fig18_04.iml" filepath="$PROJECT_DIR$/textbook_examples/ch18/fig18_04/fig18_04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch18/fig18_05/fig18_05.iml" filepath="$PROJECT_DIR$/textbook_examples/ch18/fig18_05/fig18_05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch18/fig18_09/fig18_09.iml" filepath="$PROJECT_DIR$/textbook_examples/ch18/fig18_09/fig18_09.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch18/fig18_11/fig18_11.iml" filepath="$PROJECT_DIR$/textbook_examples/ch18/fig18_11/fig18_11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch18/fig18_20/fig18_20.iml" filepath="$PROJECT_DIR$/textbook_examples/ch18/fig18_20/fig18_20.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch18/fig18_20_OLDSwingVersionforInstructorsNotUsingJavaFX/fig18_20_OLDSwingVersionforInstructorsNotUsingJavaFX.iml" filepath="$PROJECT_DIR$/textbook_examples/ch18/fig18_20_OLDSwingVersionforInstructorsNotUsingJavaFX/fig18_20_OLDSwingVersionforInstructorsNotUsingJavaFX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch20/fig20_01/fig20_01.iml" filepath="$PROJECT_DIR$/textbook_examples/ch20/fig20_01/fig20_01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch20/fig20_03/fig20_03.iml" filepath="$PROJECT_DIR$/textbook_examples/ch20/fig20_03/fig20_03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch20/fig20_05/fig20_05.iml" filepath="$PROJECT_DIR$/textbook_examples/ch20/fig20_05/fig20_05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch20/fig20_07_08/fig20_07_08.iml" filepath="$PROJECT_DIR$/textbook_examples/ch20/fig20_07_08/fig20_07_08.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch20/fig20_09/fig20_09.iml" filepath="$PROJECT_DIR$/textbook_examples/ch20/fig20_09/fig20_09.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch20/fig20_10/fig20_10.iml" filepath="$PROJECT_DIR$/textbook_examples/ch20/fig20_10/fig20_10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch20/fig20_11/fig20_11.iml" filepath="$PROJECT_DIR$/textbook_examples/ch20/fig20_11/fig20_11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch21/fig21_03_05/fig21_03_05.iml" filepath="$PROJECT_DIR$/textbook_examples/ch21/fig21_03_05/fig21_03_05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch21/fig21_10_11/fig21_10_11.iml" filepath="$PROJECT_DIR$/textbook_examples/ch21/fig21_10_11/fig21_10_11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch21/fig21_12/fig21_12.iml" filepath="$PROJECT_DIR$/textbook_examples/ch21/fig21_12/fig21_12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch21/fig21_13_14/fig21_13_14.iml" filepath="$PROJECT_DIR$/textbook_examples/ch21/fig21_13_14/fig21_13_14.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch21/fig21_17_18/fig21_17_18.iml" filepath="$PROJECT_DIR$/textbook_examples/ch21/fig21_17_18/fig21_17_18.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch17/fig26_21_22_lambda/fig26_21_22_lambda.iml" filepath="$PROJECT_DIR$/textbook_examples/ch17/fig26_21_22_lambda/fig26_21_22_lambda.iml" />
       <module fileurl="file://$PROJECT_DIR$/oral_exam1/oral_exam1.iml" filepath="$PROJECT_DIR$/oral_exam1/oral_exam1.iml" />
       <module fileurl="file://$PROJECT_DIR$/oral_exam2/oral_exam2.iml" filepath="$PROJECT_DIR$/oral_exam2/oral_exam2.iml" />
       <module fileurl="file://$PROJECT_DIR$/quizzes/quizzes.iml" filepath="$PROJECT_DIR$/quizzes/quizzes.iml" />
