@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="BooksDatabaseExamples">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/textbook_examples/ch29/BooksDatabaseExamples/dist/BooksDatabaseExamples.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
