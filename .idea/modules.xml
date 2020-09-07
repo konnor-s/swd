@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/oral_exam1/6-24_PerfectNumbers_Easy/6-24_PerfectNumbers_Easy.iml" filepath="$PROJECT_DIR$/oral_exam1/6-24_PerfectNumbers_Easy/6-24_PerfectNumbers_Easy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oral_exam1/6-24_PerfectNumbers_Easy/6-24_PerfectNumbers_Easy1.iml" filepath="$PROJECT_DIR$/oral_exam1/6-24_PerfectNumbers_Easy/6-24_PerfectNumbers_Easy1.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch29/AddressBook/AddressBook.iml" filepath="$PROJECT_DIR$/textbook_examples/ch29/AddressBook/AddressBook.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch22/BallAnimationTimer/BallAnimationTimer.iml" filepath="$PROJECT_DIR$/textbook_examples/ch22/BallAnimationTimer/BallAnimationTimer.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch22/BasicShapes/BasicShapes.iml" filepath="$PROJECT_DIR$/textbook_examples/ch22/BasicShapes/BasicShapes.iml" />
@@ -66,6 +68,7 @@
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch22/PolyShapes/PolyShapes.iml" filepath="$PROJECT_DIR$/textbook_examples/ch22/PolyShapes/PolyShapes.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch15/SerializationApps/SerializationApps.iml" filepath="$PROJECT_DIR$/textbook_examples/ch15/SerializationApps/SerializationApps.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch37/StreamMethods/StreamMethods.iml" filepath="$PROJECT_DIR$/textbook_examples/ch37/StreamMethods/StreamMethods.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oral_exam1/TestModule.iml" filepath="$PROJECT_DIR$/oral_exam1/TestModule.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch15/TextFileApps/TextFileApps.iml" filepath="$PROJECT_DIR$/textbook_examples/ch15/TextFileApps/TextFileApps.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch22/ThreeDimensionalShapes/ThreeDimensionalShapes.iml" filepath="$PROJECT_DIR$/textbook_examples/ch22/ThreeDimensionalShapes/ThreeDimensionalShapes.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch22/TimelineAnimation/TimelineAnimation.iml" filepath="$PROJECT_DIR$/textbook_examples/ch22/TimelineAnimation/TimelineAnimation.iml" />
@@ -103,6 +106,7 @@
       <module fileurl="file://$PROJECT_DIR$/fall2020swd.iml" filepath="$PROJECT_DIR$/fall2020swd.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch02/fig02_01/fig02_01.iml" filepath="$PROJECT_DIR$/textbook_examples/ch02/fig02_01/fig02_01.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch02/fig02_03/fig02_03.iml" filepath="$PROJECT_DIR$/textbook_examples/ch02/fig02_03/fig02_03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quizzes/fig02_03/fig02_031.iml" filepath="$PROJECT_DIR$/quizzes/fig02_03/fig02_031.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch02/fig02_04/fig02_04.iml" filepath="$PROJECT_DIR$/textbook_examples/ch02/fig02_04/fig02_04.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch02/fig02_06/fig02_06.iml" filepath="$PROJECT_DIR$/textbook_examples/ch02/fig02_06/fig02_06.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch02/fig02_07/fig02_07.iml" filepath="$PROJECT_DIR$/textbook_examples/ch02/fig02_07/fig02_07.iml" />
@@ -280,6 +284,7 @@
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch36/ExamplesShowingErrors/CircularDependency/src/module2/module2.iml" filepath="$PROJECT_DIR$/textbook_examples/ch36/ExamplesShowingErrors/CircularDependency/src/module2/module2.iml" />
       <module fileurl="file://$PROJECT_DIR$/oral_exam1/oral_exam1.iml" filepath="$PROJECT_DIR$/oral_exam1/oral_exam1.iml" />
       <module fileurl="file://$PROJECT_DIR$/oral_exam2/oral_exam2.iml" filepath="$PROJECT_DIR$/oral_exam2/oral_exam2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oral_exam1/p.iml" filepath="$PROJECT_DIR$/oral_exam1/p.iml" />
       <module fileurl="file://$PROJECT_DIR$/quizzes/quizzes.iml" filepath="$PROJECT_DIR$/quizzes/quizzes.iml" />
       <module fileurl="file://$PROJECT_DIR$/scratch/scratch.iml" filepath="$PROJECT_DIR$/scratch/scratch.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/textbook_examples.iml" filepath="$PROJECT_DIR$/textbook_examples/textbook_examples.iml" />
