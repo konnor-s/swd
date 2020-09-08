@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"<Unnamed>","c":"Perfect","l":"isPerfect(int)"},{"p":"<Unnamed>","c":"PerfectTest","l":"main(String[])","url":"main(java.lang.String[])"},{"p":"<Unnamed>","c":"Perfect","l":"Perfect()","url":"%3Cinit%3E()"},{"p":"<Unnamed>","c":"PerfectTest","l":"PerfectTest()","url":"%3Cinit%3E()"},{"p":"<Unnamed>","c":"Perfect","l":"printFactors(int)"}]
