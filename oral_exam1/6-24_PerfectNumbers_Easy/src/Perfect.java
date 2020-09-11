@@ -1,8 +1,7 @@
 /**
  * Class which implements perfect number functions.
  * @author Konnor Sommer
- * @version %I%, %G%
- *  */
+ */
 
 public class Perfect {
     /**

@@ -2,7 +2,6 @@
  * Class which tests for perfect numbers between 1 and 10000
  * Implements methods from class Perfect
  * @author Konnor Sommer
- * @version %I%, %G%
  */
 public class PerfectTest{
     /**
