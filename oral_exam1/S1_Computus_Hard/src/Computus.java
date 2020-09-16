@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Computus {
     private int year;
     private int month;
@@ -20,11 +22,43 @@ public class Computus {
         month=(h+l-7*m+114)/31;
         day=((h+l-7*m+114)%31)+1;
     }
-    public int getEaster(){
-        return year*10000+month*100+day;
+    private int getEaster(){
+        return month*100+day;
     }
-    public void printEaster(){
+    private void printEaster(){
         System.out.printf("%s%d%s%d%s%d%n", "Easter: ", month, "/",day, "/",year);
+    }
+
+    public static void userDateInput(){
+        int inpYear=1;
+        Scanner input=new Scanner(System.in);
+        System.out.print("Enter year to determine data of Easter, or enter -1 to exit");
+        System.out.print("\nEnter year: ");
+        inpYear=input.nextInt();
+        while (inpYear!=-1){
+            Computus easter= new Computus(inpYear);
+            easter.printEaster();
+            System.out.print("\nEnter year: ");
+            inpYear=input.nextInt();
+        }
+    }
+
+
+    public static void printOccurrences(){
+        int[][] dateArray=new int[13][32];
+        for(int i=0;i<5700000;i++){
+            Computus easter= new Computus(i);
+            int tempDate=easter.getEaster();
+            dateArray[tempDate/100][tempDate%100]++;
+        }
+        System.out.print("Occurences of Easter on each date over 5,700,000 year cycle\n");
+        for(int m=1;m<13;m++){
+            for(int d=1;d<32;d++){
+                if (dateArray[m][d]>1){
+                    System.out.printf("%d%s%d%s%d%n", m, "/",d, "--",dateArray[m][d]);
+                }
+            }
+        }
     }
 
 
