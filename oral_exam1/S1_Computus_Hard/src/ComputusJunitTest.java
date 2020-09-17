@@ -3,7 +3,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 /**
-
+ * Junit test class to test method getEaster.
+ * Tests with known Easter dates from census.gov.
+ * Easter date source: <a href="https://www.census.gov/srd/www/genhol/easter500.html">link</a>.
+ *
 
  */
 
