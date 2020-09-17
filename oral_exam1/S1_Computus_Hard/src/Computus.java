@@ -22,8 +22,8 @@ public class Computus {
         month=(h+l-7*m+114)/31;
         day=((h+l-7*m+114)%31)+1;
     }
-    private int getEaster(){
-        return month*100+day;
+    public long getEaster(){
+        return (long) year*10000+month*100+day;
     }
     private void printEaster(){
         System.out.printf("%s%d%s%d%s%d%n", "Easter: ", month, "/",day, "/",year);
@@ -42,14 +42,12 @@ public class Computus {
             inpYear=input.nextInt();
         }
     }
-
-
     public static void printOccurrences(){
         int[][] dateArray=new int[13][32];
         for(int i=0;i<5700000;i++){
-            Computus easter= new Computus(i);
-            int tempDate=easter.getEaster();
-            dateArray[tempDate/100][tempDate%100]++;
+            Computus yearObj= new Computus(i);
+            long tempDate=yearObj.getEaster();
+            dateArray[(int)((tempDate%10000)/100)][(int)((tempDate%10000)%100)]++;
         }
         System.out.print("Occurences of Easter on each date over 5,700,000 year cycle\n");
         for(int m=1;m<13;m++){
