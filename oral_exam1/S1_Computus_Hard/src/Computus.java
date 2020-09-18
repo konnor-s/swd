@@ -86,12 +86,12 @@ public class Computus {
      * @see Computus#getEaster()
      */
     public static void printOccurrences(){
-        int[][] dateArray=new int[13][32];//array to store number of easter occurrnces on each date.
+        int[][] dateArray=new int[13][32];//array to store number of easter occurrences on each date.
         for(int i=0;i<5700000;i++){
             Computus yearObj= new Computus(i);
             long tempDate=yearObj.getEaster();
             dateArray[(int)((tempDate%10000)/100)][(int)(tempDate%100)]++;//increment array of index [month][day]
-            //I could have made getMonth and getDay methods to make this cleaner, but I like just having one getEaster method for the entire date.
+            //I could have made getMonth and getDay methods to use here, but I think it's simpler to have one getEaster method for the entire date.
         }
         System.out.print("Occurences of Easter on each date over 5,700,000 year cycle\n");
         for(int m=1;m<13;m++){
