@@ -4,7 +4,6 @@ import java.util.Scanner;
  * Class which implements the Meeus/Jones/Butcher Gregorian algorithm to calculate the date of Easter.
  * Algorithm source: <a href="https://en.wikipedia.org/wiki/Computus#Anonymous_Gregorian_algorithm">link</a>.
  * @author Konnor Sommer
- *
  */
 public class Computus {
     /**
@@ -14,11 +13,11 @@ public class Computus {
     /**
      * Variable to store calculated Easter month
      */
-    private int month;
+    private final int month;
     /**
      * Variable to store calculated Easter day
      */
-    private int day;
+    private final int day;
 
     /**
      * Constructor for class Computus.
@@ -26,9 +25,8 @@ public class Computus {
      * @param year The input integer to calculate Easter
      */
     Computus(int year){
-        if(year<0) {
+        if(year<0) {//There was no Easter on negative dates
             throw new IllegalArgumentException("Year was less than 0");
-
         }
         this.year = year;
         int a = year % 19;
@@ -46,8 +44,6 @@ public class Computus {
         month = (h + l - 7 * m + 114) / 31;
         day = ((h + l - 7 * m + 114) % 31) + 1;
     }
-
-
     /**
      * Returns the date of Easter for this object.
      * @return the date of Easter, in format yearmonthday as long
@@ -74,15 +70,14 @@ public class Computus {
         Scanner input=new Scanner(System.in);
         System.out.print("Enter year to determine data of Easter, or enter negative number to exit");
         System.out.print("\nEnter year: ");
-        inpYear=input.nextInt();
-        while (inpYear>-1){
-            Computus easter= new Computus(inpYear);
+        inpYear=input.nextInt();//get input before loop in case they enter negative first
+        while (inpYear>-1){//exit for negative
+            Computus easter= new Computus(inpYear);//instantiate new object with user input
             easter.printEaster();
-            System.out.print("\nEnter year: ");
+            System.out.print("\nEnter year: ");//get new input
             inpYear=input.nextInt();
         }
     }
-
     /**
      * Prints the amount of occurrences of Easter on each calendar date over a 5,700,000 year cycle.
      * For values 0 up to 5700000, instantiates a new Computus object, then calls method getEaster to store the object's Easter
@@ -96,16 +91,15 @@ public class Computus {
             Computus yearObj= new Computus(i);
             long tempDate=yearObj.getEaster();
             dateArray[(int)((tempDate%10000)/100)][(int)(tempDate%100)]++;//increment array of index [month][day]
+            //I could have made getMonth and getDay methods to make this cleaner, but I like just having one getEaster method for the entire date.
         }
         System.out.print("Occurences of Easter on each date over 5,700,000 year cycle\n");
         for(int m=1;m<13;m++){
             for(int d=1;d<32;d++){
-                if (dateArray[m][d]>1){
+                if (dateArray[m][d]>1){//Print out each date that has non-zero occurrences
                     System.out.printf("%d%s%d%s%d%n", m, "/",d, "--",dateArray[m][d]);
                 }
             }
         }
     }
-
-
 }
