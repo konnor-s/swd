@@ -1,74 +1,68 @@
-import java.awt.FlowLayout;
+
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.event.DocumentListener;
-import java.awt.event.TextEvent;
-import java.awt.event.TextListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.awt.*;
 
-public class GUI extends JFrame{
+public class GUI extends JFrame {
     private final JTextField textField1;
     private final JTextField textField2;
 
     //private final JTextField textField3;
     //private final JTextField textField4;
 
-    public GUI(){
+    public GUI() {
         super("Convert Between Arabic and Roman Numerals");
         setLayout(new FlowLayout());
 
-        textField1=new JFormattedTextField("XV");
-        //textField1.setText("XV");
+        textField1 = new JTextField();
+        textField1.setColumns(15);
         add(textField1);
-        textField2=new JFormattedTextField("15");
-        //textField2.setText("15")
+        textField2 = new JTextField();
+        textField2.setColumns(15);
         add(textField2);
-        //textField3=new JTextField(10);
-        //add(textField3);
-        //textField4=new JTextField(10);
-       // add(textField4);
-        FieldHandler handler = new FieldHandler();
-        textField1.addPropertyChangeListener("value",handler);
-        textField2.addPropertyChangeListener("value", handler);
-    }
-    /*
-    private class TextFieldHandler implements TextListener{
-        @Override
-        public void textValueChanged(TextEvent event){
-            String string = "";
-            int num = 0;
 
-            if (event.getSource() == textField1){
-                string = event.paramString();
-                num = Converter.RomanToArabic(string);
-                textField2.setText(Integer.toString(num));
-            }
-            if(event.getSource() == textField2){
-                string = event.paramString();
-                string = Converter.ArabicToRoman(Integer.parseInt(string));
-                textField1.setText(string);
-            }
+        FieldHandler handler = new FieldHandler();
+        FieldHandler handler2 = new FieldHandler();
+        textField1.addKeyListener(handler);
+        textField2.addKeyListener(handler2);
+    }
+
+    private class FieldHandler implements KeyListener {
+        @Override
+        public void keyTyped(KeyEvent event) {
+
         }
 
-     */
-    public class FieldHandler implements PropertyChangeListener{
         @Override
-        public void propertyChange(PropertyChangeEvent event) {
-            String string = "";
-            int num = 0;
+        public void keyPressed(KeyEvent event) {
 
+        }
+        @Override
+        public void keyReleased(KeyEvent event) {
+            String string;
+            int num;
             if (event.getSource() == textField1) {
-                string = event.getPropertyName();
-                num = Converter.RomanToArabic(string);
-                textField2.setText(Integer.toString(num));
+                string = textField1.getText();
+                if (!string.equals("")) {
+                    num = Converter.RomanToArabic(string);
+                    textField2.setText(Integer.toString(num));
+                }
+                else textField2.setText("");
             }
-            else if (event.getSource() == textField2) {
-                string = event.getPropertyName();
-                string = Converter.ArabicToRoman(Integer.parseInt(string));
-                textField1.setText(string);
+            if (event.getSource() == textField2) {
+                string = textField2.getText();
+                if (!string.equals("")) {
+                    string = Converter.ArabicToRoman(Integer.parseInt(string));
+                    textField1.setText(string);
+                }
+                else textField1.setText("");
             }
         }
     }
 }
+
+
+
