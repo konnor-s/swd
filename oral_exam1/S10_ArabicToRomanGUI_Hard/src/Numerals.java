@@ -1,6 +1,6 @@
 public enum Numerals {
     M(1000),
-    LM(900),
+    CM(900),
     D(500),
     CD(400),
     C(100),
