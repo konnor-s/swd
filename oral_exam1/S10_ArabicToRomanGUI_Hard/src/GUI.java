@@ -6,29 +6,41 @@ import javax.swing.JLabel;
 import java.awt.*;
 
 /**
- * Class whch extends JFrame, used for constructing the GUI.
+ * Class which is used for defining the characteristics of the GUI within the JFrame and how it operates.
  * @author Konnor Sommer
+ * @see GUI#GUI()
+ * @see FieldHandler
  */
 public class GUI extends JFrame {
+    /**
+     * Field for inputting Roman numerals.
+     */
     private final JTextField textField1;
+    /**
+     * Field for inputting Arabic numerals.
+     */
     private final JTextField textField2;
+    /**
+     * Label for Roman numeral field.
+     */
     private final JLabel label1;
+    /**
+     * Label for Arabic field.
+     */
     private final JLabel label2;
 
     /**
-     *
+     *Constructs GUI elements and adds them to the JFrame.
      */
     public GUI() {
         super("Convert Between Arabic and Roman Numerals");
         setLayout(new FlowLayout());
 
+        //Create textfields and their labels, add them to the JFrame
         textField1 = new JTextField();
         textField1.setColumns(15);
-
         textField2 = new JTextField();
         textField2.setColumns(15);
-
-
         label1 = new JLabel("Roman Numerals");
         label2 = new JLabel("Arabic Numerals");
         add(label1);
@@ -36,12 +48,16 @@ public class GUI extends JFrame {
         add(textField2);
         add(label2);
 
+        //Register event handler with text fields
         FieldHandler handler = new FieldHandler();
-       // FieldHandler handler2 = new FieldHandler();
         textField1.addKeyListener(handler);
         textField2.addKeyListener(handler);
     }
 
+    /**
+     * Event-listener interface that handles keyPressed events for text fields 1 and 2.
+     * When something is typed in either text field, it is put through the appropriate converter, then the opposite text field is updated with the conversion.
+     */
     private class FieldHandler implements KeyListener {
         /**
          * Unused method.
@@ -60,11 +76,10 @@ public class GUI extends JFrame {
          * Detects when a key is released in a text field and updates the opposing text field.
          * textField1 will update textField2 with new Arabic numerals.
          * textField2 will update textField1 with new Roman numerals.
-         * @param event
+         * @param event The keyReleased event
+         * @see Converter#RomanToArabic(String)
+         * @see Converter#ArabicToRoman(int)
          */
-
-
-
         @Override
         public void keyReleased(KeyEvent event) {
             String string;
@@ -90,13 +105,21 @@ public class GUI extends JFrame {
             //Event in textField2
             if (event.getSource() == textField2) {
                 string = textField2.getText();
-                //If
+                //If string is entered
                 if (!string.equals("")) {
-                    if (Integer.parseInt(string)>0 && Integer.parseInt(string)<4000) {
-                        string = Converter.ArabicToRoman(Integer.parseInt(string));
-                        textField1.setText(string);
+                    //Try to use Integer.parseInt() method
+                    try {
+                        //if integer is valid
+                        if (Integer.parseInt(string) > 0 && Integer.parseInt(string) < 4000) {
+                            //Convert the number to roman then update textField1
+                            string = Converter.ArabicToRoman(Integer.parseInt(string));
+                            textField1.setText(string);
+                        }
+                        //integer out of range
+                        else textField1.setText("?");
                     }
-                    else{
+                    //If something other than an integer is entered
+                    catch(Exception e){
                         textField1.setText("?");
                     }
                 }

@@ -1,5 +1,5 @@
 /**
- * Enumerates Roman numerals with their values.
+ * Enumerates Roman numerals and subtractive couples with their values.
  * @author Konnor Sommer
  */
 

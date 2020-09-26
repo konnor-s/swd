@@ -41,6 +41,7 @@ public class Converter {
             for(Numerals n: Numerals.values()){
                 //if there are still 2 more characters, and the numeral = the next 2 characters
                 if (i < inputString.length() - 1 && (n.toString()).equals(inputString.substring(i, i + 2))) {
+                    //Validate
                     if (!Converter.Validate(smallest, n.getNum())){
                         valid = false;
                         i=inputString.length();
@@ -52,6 +53,11 @@ public class Converter {
                         outNum += n.getNum();
                         i++;//increment i an additional time since this appended 2 characters
                         break;//break from testing the rest of the numerals on this index
+                    }
+                    else{
+                        valid = false;
+                        i=inputString.length();
+                        break;
                     }
                 }
                 //if the numeral = the next character
@@ -74,7 +80,6 @@ public class Converter {
                             }
                             //else valid
                             else {
-                               smallest = n.getNum();
                                 outNum += n.getNum();
                                 break;
                             }
@@ -93,9 +98,14 @@ public class Converter {
                         outNum += n.getNum();
                         break;//break from testing the rest of the numerals on this index
                     }
+                    else{
+                        valid = false;
+                        i = inputString.length();
+                        break;
+                    }
                 }
-                //No negatives
-                if(n.getNum()<=0) {
+                //If all numerals have been tried and none matched, invalid
+                else if (n.getNum()==1) {
                     valid = false;
                     break;
                 }
