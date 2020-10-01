@@ -1,19 +1,11 @@
 import javax.swing.*;
 import java.awt.event.*;
 import javax.swing.JLabel;
-import javax.swing.border.Border;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.event.ListSelectionEvent;
 import java.awt.*;
 
-/*
-ActionListener,
-ItemListener,
-ListSelectionListener,
-MouseListener,
-MouseMotionListener
-KeyListener
- */
+
 public class DisplayEventsGUI extends JFrame{
     private final JTextField inputField;
     private final JLabel actionCap;
@@ -118,7 +110,7 @@ public class DisplayEventsGUI extends JFrame{
                 new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent actionEvent) {
-                        actionField.setText("Action Event: " + actionEvent.toString()+"\n");
+                        actionField.setText("Action Event: " + actionEvent.toString());
                     }
                 }
         );
@@ -126,18 +118,18 @@ public class DisplayEventsGUI extends JFrame{
                 new KeyListener() {
                     @Override
                     public void keyTyped(KeyEvent keyEvent) {
-                        keyField.setText(keyEvent.toString());
+                        keyField.setText("Key Typed: " +keyEvent.toString());
                     }
 
                     @Override
                     public void keyPressed(KeyEvent keyEvent) {
-                        keyField.setText(keyEvent.toString());
+                        keyField.setText("Key Pressed: "+keyEvent.toString());
 
                     }
 
                     @Override
                     public void keyReleased(KeyEvent keyEvent) {
-                        keyField.setText(keyEvent.toString());
+                        keyField.setText("Key Released: "+keyEvent.toString());
 
                     }
                 }
@@ -147,7 +139,7 @@ public class DisplayEventsGUI extends JFrame{
                     @Override
                     public void valueChanged(ListSelectionEvent listSelectionEvent) {
                         inputField.setBackground(colors[colorList.getSelectedIndex()]);
-                        listField.setText(listSelectionEvent.toString());
+                        listField.setText("List Selection ("+colorList.getSelectedValue()+"): "+listSelectionEvent.toString());
                     }
                 }
         );
@@ -155,27 +147,27 @@ public class DisplayEventsGUI extends JFrame{
                 new MouseListener() {
                     @Override
                     public void mouseClicked(MouseEvent mouseEvent) {
-                        mouseField.setText(mouseEvent.toString()+"\n");
+                        mouseField.setText("Mouse Clicked: "+mouseEvent.toString());
                     }
 
                     @Override
                     public void mousePressed(MouseEvent mouseEvent) {
-                        mouseField.setText(mouseEvent.toString()+"\n");
+                        mouseField.setText("Mouse Pressed: "+mouseEvent.toString());
                     }
 
                     @Override
                     public void mouseReleased(MouseEvent mouseEvent) {
-                        mouseField.setText(mouseEvent.toString()+"\n");
+                        mouseField.setText("Mouse Released: "+mouseEvent.toString());
                     }
 
                     @Override
                     public void mouseEntered(MouseEvent mouseEvent) {
-                        mouseField.setText(mouseEvent.toString()+"\n");
+                        mouseField.setText("Mouse Entered: "+mouseEvent.toString());
                     }
 
                     @Override
                     public void mouseExited(MouseEvent mouseEvent) {
-                        mouseField.setText(mouseEvent.toString()+"\n");
+                        mouseField.setText("Mouse Exited: "+mouseEvent.toString());
                     }
                 }
         );
@@ -183,12 +175,12 @@ public class DisplayEventsGUI extends JFrame{
                 new MouseMotionListener(){
                     @Override
                     public void mouseDragged(MouseEvent mouseEvent) {
-                        motionField.setText(mouseEvent.toString()+"\n");
+                        motionField.setText("Mouse Dragged: "+mouseEvent.toString());
                     }
 
                     @Override
                     public void mouseMoved(MouseEvent mouseEvent) {
-                        motionField.setText(mouseEvent.toString()+"\n");
+                        motionField.setText("Mouse Moved: "+mouseEvent.toString());
                     }
                 }
         );
@@ -202,7 +194,12 @@ public class DisplayEventsGUI extends JFrame{
         @Override
         public void itemStateChanged(ItemEvent event){
             inputField.setFont(font);
-            itemField.setText(event.toString()+"\n");
+            if (font.getStyle()==0){
+                itemField.setText("Item State Changed: (Plain): "+event.toString());
+            }
+            if (font.getStyle() == 2) {
+                itemField.setText("Item State Changed: (Italic): "+event.toString());
+            }
         }
     }
 }
