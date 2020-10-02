@@ -3,6 +3,7 @@ import java.awt.event.*;
 import javax.swing.JLabel;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.event.ListSelectionEvent;
+import javax.swing.plaf.basic.BasicTreeUI;
 import java.awt.*;
 
 
@@ -191,146 +192,155 @@ public class DisplayEventsGUI extends JFrame{
         italicButton.addItemListener(new ButtonHandler(new Font("Serif",Font.ITALIC,14)));
 
         //Add action listener to inputField
-        inputField.addActionListener(
-                /**
-                 * Implements action listener methods
-                 */
-                new ActionListener() {
-                    /**
-                     * Detects when an action occurs and prints the event details to the label actionField
-                     * @param actionEvent   Action event which occured
-                     * @see DisplayEventsGUI#actionField
-                     */
-                    @Override
-                    public void actionPerformed(ActionEvent actionEvent) {
-                        actionField.setText("Action Event: " + actionEvent.toString());
-                    }
-                }
-        );
+        inputField.addActionListener(new ActionHandler());
         //Add key listener to input field
-        inputField.addKeyListener(
-                new KeyListener() {
-                    /**
-                     * Detects when a key typed event occurs and prints the event details to the label keyField
-                     * @param keyEvent  Key typed event which occured
-                     * @see DisplayEventsGUI#keyField
-                     */
-                    @Override
-                    public void keyTyped(KeyEvent keyEvent) {
-                        keyField.setText("Key Typed: " +keyEvent.toString());
-                    }
-                    /**
-                     * Detects when a key pressed event occurs and prints the event details to the label keyField
-                     * @param keyEvent  Key pressed event which occured
-                     * @see DisplayEventsGUI#keyField
-                     */
-                    @Override
-                    public void keyPressed(KeyEvent keyEvent) {
-                        keyField.setText("Key Pressed: "+keyEvent.toString());
-
-                    }
-                    /**
-                     * Detects when a key released event occurs and prints the event details to the label keyField
-                     * @param keyEvent  Key released event which occured
-                     * @see DisplayEventsGUI#keyField
-                     */
-                    @Override
-                    public void keyReleased(KeyEvent keyEvent) {
-                        keyField.setText("Key Released: "+keyEvent.toString());
-
-                    }
-                }
-        );
-        colorList.addListSelectionListener(
-                new ListSelectionListener() {
-                    /**
-                     * Detects when a value changed event occurs and prints the event details to the label listField, also changing inputField to the selected color
-                     * @param listSelectionEvent   Value changed event which occured
-                     * @see DisplayEventsGUI#listField
-                     * @see DisplayEventsGUI#inputField
-                     */
-                    @Override
-                    public void valueChanged(ListSelectionEvent listSelectionEvent) {
-                        inputField.setBackground(colors[colorList.getSelectedIndex()]);
-                        listField.setText("List Selection ("+colorList.getSelectedValue()+"): "+listSelectionEvent.toString());
-                    }
-                }
-        );
+        inputField.addKeyListener(new KeyHandler());
+        //Add list selection listener to color list
+        colorList.addListSelectionListener(new ListHandler());
         //Add mouse listener to the JFrame
-        addMouseListener(
-                new MouseListener() {
-                    /**
-                     * Detects when a mouse clicked event occurs and prints the event details to the label mouseField
-                     * @param mouseEvent  Mouse clicked event which occured
-                     * @see DisplayEventsGUI#mouseField
-                     */
-                    @Override
-                    public void mouseClicked(MouseEvent mouseEvent) {
-                        mouseField.setText("Mouse Clicked: "+mouseEvent.toString());
-                    }
-                    /**
-                     * Detects when a mouse pressed event occurs and prints the event details to the label mouseField
-                     * @param mouseEvent  Mouse pressed event which occured
-                     * @see DisplayEventsGUI#mouseField
-                     */
-                    @Override
-                    public void mousePressed(MouseEvent mouseEvent) {
-                        mouseField.setText("Mouse Pressed: "+mouseEvent.toString());
-                    }
-                    /**
-                     * Detects when a mouse released event occurs and prints the event details to the label mouseField
-                     * @param mouseEvent  Mouse released event which occured
-                     * @see DisplayEventsGUI#mouseField
-                     */
-                    @Override
-                    public void mouseReleased(MouseEvent mouseEvent) {
-                        mouseField.setText("Mouse Released: "+mouseEvent.toString());
-                    }
-                    /**
-                     * Detects when a mouse entered event occurs and prints the event details to the label mouseField
-                     * @param mouseEvent  Mouse entered event which occured
-                     * @see DisplayEventsGUI#mouseField
-                     */
-                    @Override
-                    public void mouseEntered(MouseEvent mouseEvent) {
-                        mouseField.setText("Mouse Entered: "+mouseEvent.toString());
-                    }
-                    /**
-                     * Detects when a mouse exited event occurs and prints the event details to the label mouseField
-                     * @param mouseEvent  Mouse exited event which occured
-                     * @see DisplayEventsGUI#mouseField
-                     */
-                    @Override
-                    public void mouseExited(MouseEvent mouseEvent) {
-                        mouseField.setText("Mouse Exited: "+mouseEvent.toString());
-                    }
-                }
-        );
+        addMouseListener(new MouseHandler());
         //Add mouse motion listener to the JFrame
-        addMouseMotionListener(
-                new MouseMotionListener(){
-                    /**
-                     * Detects when a mouse dragged event occurs and prints the event details to the label motionField
-                     * @param mouseEvent  Mouse dragged event which occured
-                     * @see DisplayEventsGUI#motionField
-                     */
-                    @Override
-                    public void mouseDragged(MouseEvent mouseEvent) {
-                        motionField.setText("Mouse Dragged: "+mouseEvent.toString());
-                    }
-                    /**
-                     * Detects when a mouse moved event occurs and prints the event details to the label motionField
-                     * @param mouseEvent  Mouse moved event which occured
-                     * @see DisplayEventsGUI#motionField
-                     */
-                    @Override
-                    public void mouseMoved(MouseEvent mouseEvent) {
-                        motionField.setText("Mouse Moved: "+mouseEvent.toString());
-                    }
-                }
-        );
+        addMouseMotionListener(new MotionHandler());
+    }
+    /**
+     * Implements action listener methods
+     */
+    private class ActionHandler implements ActionListener {
+        /**
+         * Detects when an action occurs and prints the event details to the label actionField
+         * @param actionEvent   Action event which occured
+         * @see DisplayEventsGUI#actionField
+         */
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+            actionField.setText("Action Event: " + actionEvent.toString());
+        }
+    }
+    /**
+     * Implements key listener methods
+     */
+    private class KeyHandler implements KeyListener {
+        /**
+         * Detects when a key typed event occurs and prints the event details to the label keyField
+         * @param keyEvent  Key typed event which occured
+         * @see DisplayEventsGUI#keyField
+         */
+        @Override
+        public void keyTyped(KeyEvent keyEvent) {
+            keyField.setText("Key Typed: " +keyEvent.toString());
+        }
+        /**
+         * Detects when a key pressed event occurs and prints the event details to the label keyField
+         * @param keyEvent  Key pressed event which occured
+         * @see DisplayEventsGUI#keyField
+         */
+        @Override
+        public void keyPressed(KeyEvent keyEvent) {
+            keyField.setText("Key Pressed: "+keyEvent.toString());
+
+        }
+        /**
+         * Detects when a key released event occurs and prints the event details to the label keyField
+         * @param keyEvent  Key released event which occured
+         * @see DisplayEventsGUI#keyField
+         */
+        @Override
+        public void keyReleased(KeyEvent keyEvent) {
+            keyField.setText("Key Released: "+keyEvent.toString());
+
+        }
+    }
+    /**
+     * Implements list selection methods
+     */
+    private class ListHandler implements ListSelectionListener {
+        /**
+         * Detects when a value changed event occurs and prints the event details to the label listField, also changing inputField to the selected color
+         * @param listSelectionEvent   Value changed event which occured
+         * @see DisplayEventsGUI#listField
+         * @see DisplayEventsGUI#inputField
+         */
+        @Override
+        public void valueChanged(ListSelectionEvent listSelectionEvent) {
+            inputField.setBackground(colors[colorList.getSelectedIndex()]);
+            listField.setText("List Selection ("+colorList.getSelectedValue()+"): "+listSelectionEvent.toString());
+        }
     }
 
+    /**
+     * Implements mouse listener methods
+     */
+    private class MouseHandler implements MouseListener {
+        /**
+         * Detects when a mouse clicked event occurs and prints the event details to the label mouseField
+         * @param mouseEvent  Mouse clicked event which occured
+         * @see DisplayEventsGUI#mouseField
+         */
+        @Override
+        public void mouseClicked(MouseEvent mouseEvent) {
+            mouseField.setText("Mouse Clicked: "+mouseEvent.toString());
+        }
+        /**
+         * Detects when a mouse pressed event occurs and prints the event details to the label mouseField
+         * @param mouseEvent  Mouse pressed event which occured
+         * @see DisplayEventsGUI#mouseField
+         */
+        @Override
+        public void mousePressed(MouseEvent mouseEvent) {
+            mouseField.setText("Mouse Pressed: "+mouseEvent.toString());
+        }
+        /**
+         * Detects when a mouse released event occurs and prints the event details to the label mouseField
+         * @param mouseEvent  Mouse released event which occured
+         * @see DisplayEventsGUI#mouseField
+         */
+        @Override
+        public void mouseReleased(MouseEvent mouseEvent) {
+            mouseField.setText("Mouse Released: "+mouseEvent.toString());
+        }
+        /**
+         * Detects when a mouse entered event occurs and prints the event details to the label mouseField
+         * @param mouseEvent  Mouse entered event which occured
+         * @see DisplayEventsGUI#mouseField
+         */
+        @Override
+        public void mouseEntered(MouseEvent mouseEvent) {
+            mouseField.setText("Mouse Entered: "+mouseEvent.toString());
+        }
+        /**
+         * Detects when a mouse exited event occurs and prints the event details to the label mouseField
+         * @param mouseEvent  Mouse exited event which occured
+         * @see DisplayEventsGUI#mouseField
+         */
+        @Override
+        public void mouseExited(MouseEvent mouseEvent) {
+            mouseField.setText("Mouse Exited: "+mouseEvent.toString());
+        }
+    }
+
+    /**
+     * Implements mouse motion listener methods
+     */
+    private class MotionHandler implements MouseMotionListener{
+        /**
+         * Detects when a mouse dragged event occurs and prints the event details to the label motionField
+         * @param mouseEvent  Mouse dragged event which occured
+         * @see DisplayEventsGUI#motionField
+         */
+        @Override
+        public void mouseDragged(MouseEvent mouseEvent) {
+            motionField.setText("Mouse Dragged: "+mouseEvent.toString());
+        }
+        /**
+         * Detects when a mouse moved event occurs and prints the event details to the label motionField
+         * @param mouseEvent  Mouse moved event which occured
+         * @see DisplayEventsGUI#motionField
+         */
+        @Override
+        public void mouseMoved(MouseEvent mouseEvent) {
+            motionField.setText("Mouse Moved: "+mouseEvent.toString());
+        }
+    }
     /**
      * Implements methods from ItemListener for applying to buttons.
      */
