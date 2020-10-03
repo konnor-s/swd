@@ -6,7 +6,10 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.plaf.basic.BasicTreeUI;
 import java.awt.*;
 
-
+/**
+ * Class to setup the display events GUI with a JFrame
+ * @author Konnor Sommer
+ */
 public class DisplayEventsGUI extends JFrame{
     /**
      * Field for inputting text
