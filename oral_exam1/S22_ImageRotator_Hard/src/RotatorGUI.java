@@ -9,22 +9,33 @@ import java.awt.event.ActionListener;
 public class RotatorGUI extends JFrame{
     private final RotateLabel rLabel;
     private final JTextField actionField;
+    private int angle;
+    private Timer timer;
     public RotatorGUI(){
-       // setLayout(new FlowLayout());
+
+        angle=0;
+
         actionField = new JTextField(15);
-        actionField.addActionListener(new ActionHandler());
+        actionField.addActionListener(new SpeedHandler());
         add(actionField, BorderLayout.SOUTH);
         Icon pic = new ImageIcon(getClass().getResource("pic.png"));
         rLabel = new RotateLabel(pic);
         add(rLabel);
-
+        timer = new Timer(1000, new TimerHandler());
+        timer.start();
     }
+    public void setAngle(int i){
+        angle = i;
+    }
+
+    public int getAngle() {
+        return angle;
+    }
+
     private class RotateLabel extends JLabel {
-        private int angle;
         private int newAngle;
         public RotateLabel(Icon pic) {
             super(pic);
-            angle = 0;
             newAngle = 0;
         }
         private void setAngle(int a){
@@ -35,25 +46,23 @@ public class RotatorGUI extends JFrame{
             Graphics2D g2d = (Graphics2D) g;
             g2d.rotate(Math.toRadians(newAngle),getX() + getWidth()/2.  ,getY() +getHeight()/2. );
             super.paintComponent(g2d);
-            angle=newAngle;
+
         }//
     }
-    private class ActionHandler implements ActionListener {
-        /**
-         * Dete
-         */
-        private int angle = 0;
-
+    private class TimerHandler implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-            angle = Integer.parseInt(actionField.getText());
-            rLabel.setAngle(angle);
+            rLabel.setAngle(getAngle());
             rLabel.repaint();
-            repaint();
+
+            setAngle(getAngle()+1);
         }
     }
-    /*
-    for(i=angle;i<=newAngle;i++){
-        rLabel.paintComponent
-     */
+    private class SpeedHandler implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent actionEvent){
+            timer.setDelay(Integer.parseInt(actionField.getText()));
+        }
+
+    }
 }
