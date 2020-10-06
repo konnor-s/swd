@@ -1,35 +1,54 @@
 
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 
 public class RotatorGUI extends JFrame{
     private final RotateLabel rLabel;
-    private final JTextField actionField;
+    private final JTextField speedField;
+    private final JTextField angleField;
     private int angle;
     private Timer timer;
+    private final JRadioButton continuous;
+    private final JRadioButton incremental;
+    private final ButtonGroup buttons;
+    private final JPanel topPanel;
+
     public RotatorGUI(){
-
         angle=0;
-
-        actionField = new JTextField(15);
-        actionField.addActionListener(new SpeedHandler());
-        add(actionField, BorderLayout.SOUTH);
+        speedField = new JTextField(15);
+        speedField.addActionListener(new SpeedHandler());
+        angleField = new JTextField(15);
+        angleField.addActionListener(new AngleHandler());
         Icon pic = new ImageIcon(getClass().getResource("pic.png"));
         rLabel = new RotateLabel(pic);
         add(rLabel);
-        timer = new Timer(1000, new TimerHandler());
-        timer.start();
-    }
-    public void setAngle(int i){
-        angle = i;
-    }
 
-    public int getAngle() {
-        return angle;
+        topPanel = new JPanel();
+        topPanel.setLayout(new GridLayout(1,6));
+
+        continuous = new JRadioButton("Continuous", false);
+        incremental = new JRadioButton("Incremental", true);
+        buttons = new ButtonGroup();
+        buttons.add(continuous);
+        buttons.add(incremental);
+
+        topPanel.add(speedField);
+        topPanel.add(continuous);
+        topPanel.add(incremental);
+        topPanel.add(angleField);
+
+        add(topPanel, BorderLayout.SOUTH);
+
+        continuous.addItemListener(new ButtonHandler());
+        incremental.addItemListener(new ButtonHandler());
+
+
+        timer = new Timer(100, new TimerHandler());
     }
 
     private class RotateLabel extends JLabel {
@@ -52,17 +71,34 @@ public class RotatorGUI extends JFrame{
     private class TimerHandler implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-            rLabel.setAngle(getAngle());
+            rLabel.setAngle(angle);
             rLabel.repaint();
-
-            setAngle(getAngle()+1);
+            angle = angle + 2;
         }
     }
     private class SpeedHandler implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent actionEvent){
-            timer.setDelay(Integer.parseInt(actionField.getText()));
+            timer.setDelay(Integer.parseInt(speedField.getText()));
         }
-
+    }
+    private class AngleHandler implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+            angle = Integer.parseInt(angleField.getText());
+            rLabel.setAngle(angle);
+            rLabel.repaint();
+        }
+    }
+    private class ButtonHandler implements ItemListener {
+        @Override
+        public void itemStateChanged(ItemEvent itemEvent) {
+            if (continuous.isSelected()){
+                timer.start();
+            }
+            if (incremental.isSelected()){
+                timer.stop();
+            }
+        }
     }
 }
