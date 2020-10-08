@@ -11,6 +11,12 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Hashtable;
 
+/**
+ * Class to set up the GUI, its components, and their event handlers
+ *
+ * @author Konnor Sommer
+ *
+ */
 public class RotatorGUI extends JFrame{
     /**
      * Picture to be rotated
@@ -52,9 +58,8 @@ public class RotatorGUI extends JFrame{
         //Create the speed slider
         speedSlider = new JSlider(JSlider.HORIZONTAL, 0, 90, 45);
         speedSlider.setMajorTickSpacing(15);
-        /**
-         * Table which holds the labels for the speed slider
-         */
+
+        //Table which holds the labels for the speed slider
         Hashtable labelTable = new Hashtable();
         labelTable.put(  0 , new JLabel("0 deg/sec") );
         labelTable.put( 90 , new JLabel("90 deg/sec") );
@@ -62,9 +67,8 @@ public class RotatorGUI extends JFrame{
         speedSlider.setPaintLabels(true);
         speedSlider.setPaintTicks(true);
 
-        /**
-         * Buffered image to load the image
-         */
+
+        //Buffered image to load the image
         BufferedImage img = null;
         try {
             img = ImageIO.read(getClass().getResource("pic.png"));
@@ -72,9 +76,8 @@ public class RotatorGUI extends JFrame{
             e.printStackTrace();
         }
 
-        /**
-         * Image icon which holds the image
-         */
+
+         //Image icon which holds the image
         ImageIcon pic = new ImageIcon(img);
         rLabel = new RotateLabel(pic);
         add(rLabel);
@@ -82,16 +85,14 @@ public class RotatorGUI extends JFrame{
         //Create the radio buttons
         continuous = new JRadioButton("Continuous Mode -- Use speed slider", false);
         incremental = new JRadioButton("Incremental Mode -- Enter angle in box", true);
-        /**
-         * Button group for continuous and incremental buttons
-         */
+
+        //Button group for continuous and incremental buttons
         ButtonGroup buttons = new ButtonGroup();
         buttons.add(continuous);
         buttons.add(incremental);
 
-        /**
-         * Panel on which rotation controls are held
-         */
+
+        //Panel on which rotation controls are held
         JPanel infoPanel = new JPanel();
         infoPanel.setLayout(new GridLayout(1,6));
 
@@ -150,9 +151,14 @@ public class RotatorGUI extends JFrame{
     }
 
     /**
-     * Implements
+     * Implements action listener method for the timer
+     * @see RotatorGUI#timer
      */
     private class TimerHandler implements ActionListener {
+        /**
+         * Detects when the timer ticks and moves the angle 2 degrees.
+         * @param actionEvent
+         */
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             rLabel.setAngle(angle);
@@ -160,7 +166,17 @@ public class RotatorGUI extends JFrame{
             angle = angle + 2;
         }
     }
+
+    /**
+     * Implements action listener method for angle input.
+     *
+     */
     private class AngleHandler implements ActionListener{
+        /**
+         * Detects when an angle is entered and sets the rLabel (image) angle.
+         * @param actionEvent
+         * @see RotatorGUI#rLabel
+         */
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             angle = Integer.parseInt(angleField.getText());
@@ -168,25 +184,47 @@ public class RotatorGUI extends JFrame{
             rLabel.repaint();
         }
     }
+
+    /**
+     * Implements item listener method for the buttons.
+     */
     private class ButtonHandler implements ItemListener {
+        /**
+         * Detects when a button is pressed and sets the rotation state accordingly.
+         * If continuous is selected, starts the timer and sets the speed.
+         * If incremental is selected, stops the timer.
+         * @param itemEvent
+         * @see RotatorGUI#timer
+         */
         @Override
         public void itemStateChanged(ItemEvent itemEvent) {
             if (continuous.isSelected()){
                 timer.start();
-                timer.setDelay(1000/(speedSlider.getValue()/2));
+                timer.setDelay(1000/(speedSlider.getValue()/2));//speedSlider is in deg/sec. Angle moves 2 deg per timer tick. Convert deg/sec to sec.
             }
             if (incremental.isSelected()){
                 timer.stop();
             }
         }
     }
-    private class SliderHandler implements ChangeListener{
 
+    /**
+     * Implements change listener method for the speed slider.
+     */
+    private class SliderHandler implements ChangeListener{
+        /**
+         * Detects when the speed slider moves and sets new delay for timer.
+         * @param changeEvent
+         * @see RotatorGUI#speedSlider
+         * @see RotatorGUI#timer
+         */
         @Override
         public void stateChanged(ChangeEvent changeEvent) {
-            if (continuous.isSelected()) {
-                int speed = speedSlider.getValue();
-                timer.setDelay(1000 / (speed / 2));
+            if (!speedSlider.getValueIsAdjusting()){//only work if its not moving. prevent laggy slider
+                if (continuous.isSelected()) {
+                    int speed = speedSlider.getValue();
+                    timer.setDelay(1000 / (speed / 2));
+                }
             }
         }
     }
