@@ -1,6 +1,7 @@
 public class LoanAccount extends Account {
-    LoanAccount(String holder, int number, double balance){
+    final  double interest;
+    LoanAccount(String holder, int number, double balance,double interest){
         super(holder, number, balance);
-
+        this.interest = interest;
     }
 }
