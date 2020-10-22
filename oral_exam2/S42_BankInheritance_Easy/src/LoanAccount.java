@@ -1,7 +1,11 @@
 public class LoanAccount extends Account {
-    final  double interest;
+    private final double interestRate;
     LoanAccount(String holder, int number, double balance,double interest){
-        super(holder, number, balance);
-        this.interest = interest;
+        super(holder, number, balance, "Loan");
+        this.interestRate = interest;
+    }
+    @Override
+    public void update() {
+        setAccBalance(getAccBalance() * (interestRate+1));
     }
 }

@@ -1,9 +1,14 @@
 public class SavingsAccount extends Account {
-    double interestRate;
+    private double interestRate;
 
     SavingsAccount(String holder, int number, double balance, double interest){
-        super(holder, number, balance);
+        super(holder, number, balance, "Savings");
         interestRate = interest;
+
     }
 
+    @Override
+    public void update() {
+        setAccBalance(getAccBalance() * (interestRate+1));
+    }
 }
