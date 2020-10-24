@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 import java.util.Scanner;
 
 /**
@@ -67,7 +67,7 @@ public class Bank {
                 //oldBalance = (accObjects.get(index)).getAccBalance();//save old balance
                 oldBalance = Account.getAccount(num).getAccBalance();//save old balance
 
-                System.out.println("\nChoose account option for holder "+Account.getAccount(num).getAccHolder()+"\n 1: Deposit \n 2: Withdraw/Make loan payment \n 3: Update account with interest");
+                System.out.println("\nChoose " + Account.getAccount(num).getAccType()+" account option for holder "+Account.getAccount(num).getAccHolder()+", balance = "+Account.getAccount(num).getAccBalance()+"\n 1: Deposit/Take out loan \n 2: Withdraw/Make loan payment \n 3: Update account with interest");
                 int opt = input.nextInt();
 
                 switch (opt) {//Choose what you want to do with the account

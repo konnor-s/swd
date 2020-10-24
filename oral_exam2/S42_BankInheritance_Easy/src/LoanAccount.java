@@ -29,8 +29,10 @@ public class LoanAccount extends Account {
     public void withdraw(double value){
         if (getAccBalance() - value <=0){//If the balance goes to 0, the loan is payed off
             System.out.println("Loan payed off");
-        };
-        super.withdraw(value);
+            super.setAccBalance(0);
+        }
+        else super.withdraw(value);
+
     }
 
     /**
