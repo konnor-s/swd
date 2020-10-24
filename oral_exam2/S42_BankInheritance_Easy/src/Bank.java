@@ -1,82 +1,90 @@
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Implements banker interface.
+ * A banker can create new accounts of any type, and access any saved account.
+ * The banker can make a deposit, withdraw, or update account with interest.
+ */
 public class Bank {
-    public static void main(String args[]){
-        boolean skip=false;
+    /**
+     * Interface for a banker to create new accounts of any type, and access any saved account.
+     * The banker can make a deposit, withdraw, or update account with interest.
+     */
+    public static void BankerInterface(){
+
         int num;
-        int index = 0;
         double oldBalance=0;
         double interest = 0;
         Scanner input=new Scanner(System.in);
-        Account[] accounts;
-        ArrayList<Integer> accts = new ArrayList<>();
-        ArrayList<Account> acs = new ArrayList<Account>();
-        System.out.println("Enter Account Number. Enter -1 to exit application.");
+
+        //Loop to access accounts
+        System.out.println("\nBanker interface opened.\nEnter Account Number. Enter -1 to exit application.");
         num=input.nextInt();
         while(num>=0){
-
-            if (!accts.contains(num)) {
+            boolean skip=false;
+            //If the account is not stored, prompt to create new account
+            if (!Account.isAccount(num)) {
                 System.out.println("Create new account with number " + num + "? 1 for yes, 0 for no.");
                 if (input.nextInt() == 1) {
-                    accts.add(num);
                     input.nextLine();
-                    System.out.println("Holder name?");
+
+                    System.out.println("Holder name?");//Store holder's name
                     String name = input.nextLine();
-                    System.out.println("Initial Balance?");
+
+                    System.out.println("Initial Balance?");//Store initial balance
                     double bal = input.nextDouble();
-                    System.out.println("Account type: \n 1: Savings \n 2: Checking \n 3. Loan");
+
+                    System.out.println("Account type: \n 1: Savings \n 2: Checking \n 3. Loan");//Select account type
                     int type = input.nextInt();
-                    switch (type) {
+
+                    switch (type) {//Initialize account specific parameters, and create a new object of that account type
                         case 1:
-                            System.out.println("Interest rate?");
+                            System.out.println("Interest rate? (as decimal)");
                             interest = input.nextDouble();
-                            acs.add(new SavingsAccount(name, num, bal, interest));
+                            new SavingsAccount(name, num, bal, interest);
                             break;
 
                         case 2:
                             System.out.println("Overdraft limit?");
                             double overD = input.nextDouble();
-                            acs.add(new CheckingAccount(name, num, bal, overD));
+                            new CheckingAccount(name, num, bal, overD);
                             break;
                         case 3:
-                            System.out.println("Interest rate?");
+                            System.out.println("Interest rate? (as decimal)");
                             interest = input.nextDouble();
-                            acs.add(new LoanAccount(name, num, bal, interest));
+                            new LoanAccount(name, num, bal, interest);
                     }
                 }
-                else skip=true;
+                else skip=true;//If they don't want to create a new account, skip the next section to access the account
             }
             if (!skip) {
-                for (int i = 0; i < accts.size(); i++) {//get index of current account
-                    if (accts.get(i) == num) {
-                        index = i;
-                    }
-                }
-                oldBalance = (acs.get(index)).getAccBalance();//save old balance
+               // for (int i = 0; i < accNums.size(); i++) {//get index of current account
+                //    if (accNums.get(i) == num) {
+               //         index = i;
+               //     }
+                //}
+                //oldBalance = (accObjects.get(index)).getAccBalance();//save old balance
+                oldBalance = Account.getAccount(num).getAccBalance();//save old balance
 
-
-                if ((acs.get(index)).getAccType()=="Savings"){
-
-                }
-                System.out.println("Choose account option: \n 1: Deposit \n 2: Withdraw/ Make loan payment \n 3: Update account with interest");
+                System.out.println("\nChoose account option for holder "+Account.getAccount(num).getAccHolder()+"\n 1: Deposit \n 2: Withdraw/Make loan payment \n 3: Update account with interest");
                 int opt = input.nextInt();
-                switch (opt) {
+
+                switch (opt) {//Choose what you want to do with the account
                     case 1:
                         System.out.println("Amount to deposit?");
                         double dep = input.nextDouble();
-                        (acs.get(index)).deposit(dep);
+                        Account.getAccount(num).deposit(dep);
                         break;
                     case 2:
-                        System.out.println("Amount to withdraw?");
+                        System.out.println("Amount to withdraw/Amount to pay on loan?");
                         double wit = input.nextDouble();
-                        (acs.get(index)).withdraw(wit);
+                        Account.getAccount(num).withdraw(wit);
                         break;
                     case 3:
-                        (acs.get(index)).update();
+                        Account.getAccount(num).update();
                 }
-                System.out.println("Old Balance: " + oldBalance + "\nNew Balance: " + (acs.get(index)).getAccBalance());
+                System.out.println("Old Balance: " + oldBalance + "\nNew Balance: " + Account.getAccount(num).getAccBalance());
             }
             System.out.println("Enter Account Number. Enter -1 to exit application.");
             num=input.nextInt();
