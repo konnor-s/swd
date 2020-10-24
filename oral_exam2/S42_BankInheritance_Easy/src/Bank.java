@@ -5,6 +5,7 @@ import java.util.Scanner;
  * Implements banker interface.
  * A banker can create new accounts of any type, and access any saved account.
  * The banker can make a deposit, withdraw, or update account with interest.
+ * @see Account
  */
 public class Bank {
     /**
@@ -59,12 +60,7 @@ public class Bank {
                 else skip=true;//If they don't want to create a new account, skip the next section to access the account
             }
             if (!skip) {
-               // for (int i = 0; i < accNums.size(); i++) {//get index of current account
-                //    if (accNums.get(i) == num) {
-               //         index = i;
-               //     }
-                //}
-                //oldBalance = (accObjects.get(index)).getAccBalance();//save old balance
+
                 oldBalance = Account.getAccount(num).getAccBalance();//save old balance
 
                 System.out.println("\nChoose " + Account.getAccount(num).getAccType()+" account option for holder "+Account.getAccount(num).getAccHolder()+", balance = "+Account.getAccount(num).getAccBalance()+"\n 1: Deposit/Take out loan \n 2: Withdraw/Make loan payment \n 3: Update account with interest");
