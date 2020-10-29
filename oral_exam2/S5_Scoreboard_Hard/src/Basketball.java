@@ -1,4 +1,12 @@
+/**
+ * Extends Game class to define particular game basketball.
+ */
 public class Basketball extends Game{
+    /**
+     * Constructs new basketball game with its teams, period type, and scoring methods.
+     * @param a Home team
+     * @param b Away team
+     */
     Basketball(String a, String b){
         super(a,b);
         createPeriods(0,20,"Half",2);
