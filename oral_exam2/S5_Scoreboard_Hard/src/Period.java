@@ -1,5 +1,6 @@
 /**
  * Defines characteristics of a game period.
+ * @author Konnor Sommer
  */
 public class Period {
     /**

@@ -1,5 +1,6 @@
 /**
  * Extends Game class to define particular game basketball.
+ * @author Konnor Sommer
  */
 public class Basketball extends Game{
     /**

@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 /**
  * Implements a scoreboard to keep score of a game.
+ * @author Konnor Sommer
  */
 public class ScoreboardTest {
     /**

@@ -1,5 +1,6 @@
 /**
  * Defines a scoring method for some game.
+ * @author Konnor Sommer
  */
 public class ScoringMethod {
     /**

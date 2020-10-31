@@ -1,5 +1,6 @@
 /**
  * Extends Game class to define particular game hockey.
+ * @author Konnor Sommer
  */
 public class Hockey extends Game{
     /**
