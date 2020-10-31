@@ -1,6 +1,13 @@
 import java.util.Scanner;
 
+/**
+ * Implements a scoreboard to keep score of a game.
+ */
 public class ScoreboardTest {
+    /**
+     * Implements a scoreboard to keep score of a game.
+     * @param args
+     */
     public static void main(String args[]) {
         Game game = new Game("a","b");
         boolean valid = true;
@@ -65,10 +72,12 @@ public class ScoreboardTest {
                 else if (choice <= game.getScoringMethods().size() * 2) {
                     game.addScore(game.getScoringMethods().get(choice - 1 - game.getScoringMethods().size()), teamB);
                 }
+                //End period
                 else if (choice == game.getScoringMethods().size() * 2 + 1) {
                     game.endGamePeriod();
                 }
             }
+            //Game over
             System.out.println("\nGame Over. Final Score:");
             System.out.println(teamA + ": " + game.getScores()[0] + "  " + teamB + ": " + game.getScores()[1]);
             System.out.println("Winner: " + game.getWinner());
