@@ -1,7 +1,11 @@
 public class Sun extends Ball {
 
-    Sun(int r, float s,int x, int y){
-        super(r,s,x,y);
+    Sun(int r, int x, int y,int w){
+        super(r,x,y,w);
 
+    }
+    @Override
+    public int getType(){
+        return 0;
     }
 }

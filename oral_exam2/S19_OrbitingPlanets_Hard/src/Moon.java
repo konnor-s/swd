@@ -1,5 +1,9 @@
 public class Moon extends Planet {
-    Moon(int r, float s,int x, int y){
-        super(r,s,x,y);
+    Moon(int r,int x, int y,int w,Ball planet){
+        super(r,x,y,w,planet);
+    }
+    @Override
+    public int getType(){
+        return 2;
     }
 }

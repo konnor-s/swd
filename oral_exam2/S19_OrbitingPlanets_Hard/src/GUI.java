@@ -11,14 +11,15 @@ import java.util.concurrent.Executors;
 public class GUI extends JFrame {
     private final Space space;
     private ExecutorService executor = Executors.newCachedThreadPool();
-    private Sun sun= new Sun(300,300,20,20);
+    private Sun sun= new Sun(0,300,300,15);
     private Timer timer;
     private static ArrayList<Ball> orbs = new ArrayList<Ball>();
 
     GUI(){
         space = new Space();
+        space.setBackground(Color.BLACK);
         add(space);
-        orbs.add(new Sun(0,0,300,300));
+        orbs.add(sun);
 
         timer = new Timer(1000, new TimerHandler());
         timer.start();
@@ -27,20 +28,24 @@ public class GUI extends JFrame {
     }
 
 
-    private class Space extends JLabel{
+    private class Space extends JPanel{
         @Override
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
 
 
             for (Ball i : orbs) {
-                if (i.g==0) {
+                if (i.getType()==0) {
                     g.setColor(Color.YELLOW);
-                    g.fillOval(i.getX(), i.getY(), 30, 30);
+                    g.fillOval(i.getX(), i.getY(), i.getWidth()*2, i.getWidth()*2);
                 }
-                else {
+                else if (i.getType() == 1){
                     g.setColor(Color.RED);
-                    g.fillOval(i.getX(), i.getY(), 15, 15);
+                    g.fillOval(i.getX(), i.getY(), i.getWidth()*2, i.getWidth()*2);
+                }
+                else if (i.getType() == 2){
+                    g.setColor(Color.white);
+                    g.fillOval(i.getX(),i.getY(),i.getWidth()*2, i.getWidth()*2);
                 }
             }
             repaint();
@@ -52,10 +57,11 @@ public class GUI extends JFrame {
         int numPlanets = 0;
         @Override
         public void mouseClicked(MouseEvent mouseEvent) {
-            if (numPlanets<2){
+            if (numPlanets<8){
                 numPlanets++;
-                orbs.add(new Planet(numPlanets*30,1,numPlanets*30+ orbs.get(0).getX(), orbs.get(0).getY()));
+                orbs.add(new Planet(numPlanets*40,numPlanets*40+ orbs.get(0).getX(), orbs.get(0).getY(),10, sun));
                 executor.execute(orbs.get(numPlanets));
+
             }
         }
         @Override
