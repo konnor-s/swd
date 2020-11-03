@@ -36,8 +36,12 @@ public abstract class Ball implements Runnable{
     public void setyCenter(int y){
         yCenter = y;
     }
+    public int getMoons(){
+        return 0;
+    }
+    public void addMoon(){}
     public void run(){
-        System.out.println("run");
+
         while(true) {
             theta = theta + speed * 2 * Math.PI / 360;
             xPos = (int)(xCenter + radius *  Math.cos(theta) - width);
