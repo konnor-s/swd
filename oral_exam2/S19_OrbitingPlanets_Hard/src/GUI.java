@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
 public class GUI extends JFrame {
     private final Space space;
     private ExecutorService executor = Executors.newCachedThreadPool();
-    private Sun sun= new Sun(0,300,300,15);
+    private Sun sun= new Sun(0,450,350,15);
     private Timer timer;
     private static ArrayList<Ball> orbs = new ArrayList<Ball>();
     private static ArrayList<Moon> moons = new ArrayList<Moon>();
@@ -33,7 +33,7 @@ public class GUI extends JFrame {
                     g.fillOval(i.getX(), i.getY(), i.getWidth()*2, i.getWidth()*2);
                 }
                 else if (i.getType() == 1){
-                    g.setColor(Color.RED);
+                    g.setColor(Color.blue);
                     g.fillOval(i.getX(), i.getY(), i.getWidth()*2, i.getWidth()*2);
                 }
             }
@@ -52,7 +52,7 @@ public class GUI extends JFrame {
         public void mouseClicked(MouseEvent mouseEvent) {
             if (numPlanets<8){
                 numPlanets++;
-                orbs.add(new Planet(numPlanets*40,numPlanets*40+ orbs.get(0).getX(), orbs.get(0).getY(),10, sun));
+                orbs.add(new Planet(20+numPlanets*35,20+numPlanets*35+ orbs.get(0).getX(), orbs.get(0).getY(),10, sun));
                 executor.execute(orbs.get(numPlanets));
             }
         }
@@ -75,9 +75,8 @@ public class GUI extends JFrame {
             for (int i = 1; i < 9; i++) {
                 try {
                     if (keyEvent.getKeyChar() == (char) (i+'0') & orbs.get(i).getMoons() < 2) {
-                        System.out.println("in");
                         orbs.get(i).addMoon();
-                        moons.add(new Moon(orbs.get(i).getMoons() * 20, orbs.get(i).getMoons() * 20 + orbs.get(0).getX(), orbs.get(0).getY(), 3, orbs.get(i)));
+                        moons.add(new Moon(10+orbs.get(i).getMoons() * 10, 10+orbs.get(i).getMoons() * 10 + orbs.get(0).getX(), orbs.get(0).getY(), 3, orbs.get(i)));
                         executor.execute(moons.get(moons.size() - 1));
                     }
                 }

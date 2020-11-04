@@ -1,21 +1,27 @@
 import javax.swing.*;
 
 public abstract class Ball implements Runnable{
-    int xPos;
-    int yPos;
-    int xCenter;
-    int yCenter;
-    int radius;
-    int width;
-    double speed = Math.random() * (4 - .5 + 1) + .5;
-    double theta = 0;
-   // JLabel space;
+    private int xPos;
+    private int yPos;
+    private int xCenter;
+    private int yCenter;
+    private int radius;
+    private int width;
+    private double speed = Math.random() * (2 - .2 + 1) + .2;
+    private double theta = 0;
+    private Ball biggerOrb;
     Ball(int r,int x, int y,int w){
         radius = r;
         xPos = x;
         yPos = y;
         width = w;
-        //this.space = space;
+    }
+    Ball(int r,int x, int y,int w,Ball orb){
+        radius = r;
+        xPos = x;
+        yPos = y;
+        width = w;
+        biggerOrb = orb;
     }
     public abstract int getType();
     public int getX(){
@@ -44,6 +50,8 @@ public abstract class Ball implements Runnable{
 
         while(true) {
             theta = theta + speed * 2 * Math.PI / 360;
+            xCenter = biggerOrb.getX()+biggerOrb.getWidth();
+            yCenter = biggerOrb.getY()+biggerOrb.getWidth();
             xPos = (int)(xCenter + radius *  Math.cos(theta) - width);
             yPos = (int)(yCenter - radius *  Math.sin(theta) - width);
             try {
