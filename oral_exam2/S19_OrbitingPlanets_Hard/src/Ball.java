@@ -1,5 +1,5 @@
 import java.awt.*;
-import java.util.ArrayList;
+
 
 /**
  * Defines characteristics and methods of celestial balls
@@ -33,7 +33,7 @@ public abstract class Ball implements Runnable{
     /**
      * Angular speed of theis ball
      */
-    private final double speed = Math.random() * (2 - .2 + 1) + .2;
+    private double speed;
     /**
      * Current angle of this ball
      */
@@ -94,6 +94,13 @@ public abstract class Ball implements Runnable{
     }
 
     /**
+     * Sets the speed of this ball
+     * @param s speed
+     */
+    public void setSpeed(double s){
+        speed = s;
+    }
+    /**
      * Returns current y position
      * @return y position
      */
@@ -153,7 +160,7 @@ public abstract class Ball implements Runnable{
             xPos = (int)(xCenter + radius *  Math.cos(theta) - width);
             yPos = (int)(yCenter - radius *  Math.sin(theta) - width);
             try {
-                Thread.sleep(80);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

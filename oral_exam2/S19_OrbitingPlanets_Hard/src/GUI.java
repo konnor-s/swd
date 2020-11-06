@@ -23,10 +23,6 @@ public class GUI extends JFrame {
      */
     private final Sun sun= new Sun(0,450,350,15);
     /**
-     * Updates the JPanel periodically to let the planets move
-     */
-    private Timer timer;
-    /**
      * List of orbs which include the sun and the planets
      */
     private ArrayList<Ball> orbs = new ArrayList<Ball>();
@@ -45,9 +41,6 @@ public class GUI extends JFrame {
         add(space);
         //add the sun to the orbs list
         orbs.add(sun);
-        //Create and start timer
-        //timer = new Timer(100, new TimerHandler());
-        //timer.start();
         //Add listeners for the creation of planets and moons
         space.addMouseListener(new MouseHandler());
         addKeyListener(new KeyHandler());
@@ -83,13 +76,13 @@ public class GUI extends JFrame {
                 g.setColor(i.getColor());
                 g.fillOval(i.getX(),i.getY(),i.getWidth()*2, i.getWidth()*2);
             }
+            //Make this thread wait a little bit, then recursively call this function to continuously repaint
             try {
-                Thread.sleep(20);
+                Thread.sleep(10);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             repaint();
-
         }
     }
 
@@ -107,7 +100,7 @@ public class GUI extends JFrame {
         public void mouseClicked(MouseEvent mouseEvent) {
             if (numPlanets<8){
                 numPlanets++;
-                orbs.add(new Planet(20+numPlanets*35,20+numPlanets*35+ orbs.get(0).getX(), orbs.get(0).getY(),10, sun));
+                orbs.add(new Planet(20+numPlanets*40,20+numPlanets*40+ orbs.get(0).getX(), orbs.get(0).getY(),10, sun));
                 executor.execute(orbs.get(numPlanets));
             }
         }
@@ -177,20 +170,5 @@ public class GUI extends JFrame {
          */
         @Override
         public void keyReleased(KeyEvent keyEvent) {        }
-    }
-
-    /**
-     * Handles action events for the timer
-     */
-    private class TimerHandler implements ActionListener {
-        /**
-         * Repaints the JPanel
-         * @param actionEvent
-         */
-        @Override
-        public void actionPerformed(ActionEvent actionEvent) {
-            space.repaint();
-
-        }
     }
 }

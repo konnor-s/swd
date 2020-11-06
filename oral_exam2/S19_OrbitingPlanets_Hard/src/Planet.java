@@ -31,6 +31,7 @@ public class Planet extends Ball{
         setyCenter(sun.getY() + sun.getWidth());
         int rand = (int) (Math.random() * 6);
         color = colors[rand];
+        setSpeed(Math.random() * (2 - .3 + 1) + .3);
     }
 
     /**
