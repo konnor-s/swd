@@ -7,6 +7,7 @@ import java.net.Socket;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Formatter;
 import java.util.Scanner;
 
 public class Server {
@@ -14,7 +15,8 @@ public class Server {
     private Socket connection;
     private ObjectOutputStream output;
     private ObjectInputStream input;
-    private static Scanner fileData;
+    private Formatter fileOut;
+    private String root = "oral_exam2/28-14_ModifyFile_Medium/src/";
     public void runServer(){
         try{
             server = new ServerSocket(23870);
@@ -45,23 +47,38 @@ public class Server {
         input = new ObjectInputStream(connection.getInputStream());
     }
     private void processConnection() throws IOException{
+        System.out.println("Talking...");
         while(true){
-            try{
-                String newContents = new String();
-                String oldContents;
-                newContents = (String) input.readObject();
-                Path path = Paths.get(newContents);
-                if(Files.exists(path)) {
-                    oldContents = new String(Files.readAllBytes(path));
-                    output.writeObject(oldContents);
-                    output.flush();
-                }
-                   // fileData = new Scanner(path);
-                    //newContents =
 
-                //update file
+            String nameIn = new String();
+            String contentIn = new String();
+            String oldContents;
+            //Get client's  file name
+            try { nameIn = (String) input.readObject(); }
+            catch(ClassNotFoundException c){}
+            //set path
+            Path path = Paths.get(root+nameIn);
+
+            if(Files.exists(path)) {
+                //Read contents from file into string
+                oldContents = new String(Files.readAllBytes(path));
+                //send contents to client
+                output.writeObject(oldContents);
+                output.flush();
+
+                //Read edited file from client
+                try { contentIn = (String) input.readObject(); }
+                catch(ClassNotFoundException c){}
+
+                //Write edited contents back to file
+                fileOut = new Formatter(root +nameIn);
+                fileOut.format(contentIn);
+                fileOut.close();
+                //fileOut.flush();
             }
-            catch(ClassNotFoundException classNotFoundException){}
+            else{
+                output.writeObject("Invalid file name");
+            }
         }
     }
 }

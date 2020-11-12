@@ -27,8 +27,10 @@ public class Client extends JFrame {
         fileName = new JTextField();
         fileName.setText("Enter file name");
         contentArea = new JTextArea();
+        contentArea.setEditable(false);
         saveButton = new JButton();
         saveButton.setText("Save Changes");
+
 
         fileName.addActionListener(
                 new ActionListener() {
@@ -41,18 +43,19 @@ public class Client extends JFrame {
                             ioException.printStackTrace();
                         }
                         fileName.setText("");
+                        fileName.setEditable(false);
                     }
                 }
         );
         saveButton.addActionListener(
                 new ActionListener(){
                     public void actionPerformed(ActionEvent event) {
-                        try {
-                            output.writeObject(contentArea.getText());
-                            output.flush();
-                        } catch (IOException ioException) {
-                            ioException.printStackTrace();
-                        }
+                        if (contentArea.isEditable())
+                            try {
+                                output.writeObject(contentArea.getText());
+                                output.flush();
+                                contentArea.setText("");
+                            } catch (IOException ioException) { ioException.printStackTrace();    }
                     }
                 }
 
@@ -92,8 +95,11 @@ public class Client extends JFrame {
         while(true) {
             try {
                 fileContents = (String) input.readObject();
+                System.out.println("content received");
+                contentArea.setText(fileContents);
 
-            } catch (ClassNotFoundException classNotFoundException) {
+            }
+            catch (ClassNotFoundException classNotFoundException) {
             }
         }
     }
