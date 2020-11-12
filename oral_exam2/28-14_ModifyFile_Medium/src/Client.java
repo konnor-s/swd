@@ -48,16 +48,22 @@ public class Client extends JFrame {
                 }
         );
         saveButton.addActionListener(
-                new ActionListener(){
-                    public void actionPerformed(ActionEvent event) {
-                        if (contentArea.isEditable())
-                            try {
-                                output.writeObject(contentArea.getText());
-                                output.flush();
-                                contentArea.setText("");
-                            } catch (IOException ioException) { ioException.printStackTrace();    }
+            new ActionListener() {
+                public void actionPerformed(ActionEvent event) {
+                    if (contentArea.isEditable()) {
+                        try {
+                            output.writeObject(contentArea.getText());
+                            output.flush();
+
+                        } catch (IOException ioException) {
+                            ioException.printStackTrace();
+                        }
+                        contentArea.setText("");
+                        contentArea.setEditable(false);
+                        fileName.setEditable(true);
                     }
                 }
+            }
 
         );
 
@@ -93,13 +99,14 @@ public class Client extends JFrame {
     private void processConnection() throws IOException {
        // setTextFieldEditable(true);
         while(true) {
-            try {
-                fileContents = (String) input.readObject();
-                System.out.println("content received");
-                contentArea.setText(fileContents);
-
+            try { fileContents = (String) input.readObject();}
+            catch (ClassNotFoundException classNotFoundException) {     }
+            contentArea.setText(fileContents);
+            if (!fileContents.equals("Invalid file name")) {
+                contentArea.setEditable(true);
             }
-            catch (ClassNotFoundException classNotFoundException) {
+            else{
+                fileName.setEditable(true);
             }
         }
     }
@@ -113,7 +120,5 @@ public class Client extends JFrame {
         catch(IOException ioException){
             ioException.printStackTrace();
         }
-
     }
-
 }
