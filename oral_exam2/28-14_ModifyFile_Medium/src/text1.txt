@@ -1,2 +1,2 @@
 This is text1.txt.
-Try editing me!
+This is a nice file!

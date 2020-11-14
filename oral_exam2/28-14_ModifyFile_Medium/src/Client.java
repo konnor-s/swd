@@ -37,7 +37,7 @@ public class Client extends JFrame {
     /**
      * host address
      */
-    private String chatServer;
+    private String server;
     /**
      * Socket for this client
      */
@@ -50,7 +50,7 @@ public class Client extends JFrame {
     public Client(String host){
         super("Client");
 
-        chatServer = host;
+        server = host;
 
         fileName = new JTextField();
         fileName.setText("Enter file name (text1.txt or text2.txt)");
@@ -123,6 +123,7 @@ public class Client extends JFrame {
         catch (IOException ioException) {
             ioException.printStackTrace();
         }
+        //If server closes
         finally {
             closeConnection();
         }
@@ -134,7 +135,7 @@ public class Client extends JFrame {
      * @throws IOException
      */
     private void connectToServer() throws IOException   {
-        client = new Socket(InetAddress.getByName(chatServer),23870);
+        client = new Socket(InetAddress.getByName(server),23870);
     }
 
     /**
