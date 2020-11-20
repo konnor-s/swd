@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 /**
  * Test class for BucketSort class
+ * @author Konnor Sommer
  */
 public class SortTest {
     /**
@@ -18,7 +19,7 @@ public class SortTest {
         int[] array = new int[num];
 
         //Read in numbers to array
-        System.out.println("Enter numbers separated by space");
+        System.out.println("Enter numbers separated by a space");
         for (int i = 0 ; i < num ; i++ ) {
             array[i] = input.nextInt();
         }
@@ -27,7 +28,7 @@ public class SortTest {
         int[] r = b.sort();
 
         for(int i=0;i<r.length;i++) {
-            System.out.print(r[i]+", ");
+            System.out.print(r[i]+" ");
         }
     }
 }
