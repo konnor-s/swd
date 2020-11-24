@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Bloom?>
-<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane fx:id="gridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1">
+<GridPane fx:id="gridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="MorseGUIController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -21,21 +17,10 @@
       <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <TextField fx:id="englishIn" GridPane.rowIndex="3" />
-      <TextField fx:id="englishOut" GridPane.columnIndex="1" GridPane.rowIndex="1">
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <effect>
-            <Glow />
-         </effect>
-      </TextField>
-      <TextField fx:id="morseOut" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <TextField fx:id="morseIn" GridPane.rowIndex="1">
-         <effect>
-            <Bloom />
-         </effect>
-      </TextField>
+      <TextField fx:id="englishIn" onAction="#translateToMorse" GridPane.rowIndex="3" />
+      <TextField fx:id="englishOut" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+      <TextField fx:id="morseOut" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <TextField fx:id="morseIn" onAction="#translateToEnglish" GridPane.rowIndex="1"/>
       <Label fx:id="morseInLabel" text="Morse Code Input" />
       <Label fx:id="englishOutLabel" text="Translated to English" GridPane.columnIndex="1" />
       <Label fx:id="englishInLabel" text="English Input" GridPane.rowIndex="2" />
