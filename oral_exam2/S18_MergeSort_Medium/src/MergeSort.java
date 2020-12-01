@@ -1,6 +1,14 @@
 import java.util.Arrays;
 
+/**
+ * Class which implements merge sort algorithm method.
+ * @author Konnor Sommer
+ */
 public class MergeSort {
+    /**
+     * Sorts an input array of integers using a merge sort algorithm.
+     * @param inpArray array of ints
+     */
     public static void mergeSort(int[] inpArray){
 
         //Only sort again if the the array has multiple values
@@ -15,13 +23,13 @@ public class MergeSort {
             mergeSort(left);
             mergeSort(right);
 
-            //Merge
-            int l = 0;
-            int r =  0;
-            int k = 0;
+            //Merge left and right arrays
+            int l = 0; //left counter
+            int r =  0; //right counter
+            int k = 0; //main array counter
             //while i and j counters are both within their array, compare the right and left array values
             while ((l < m) & (r < (n - m))) {
-                if (left[l] <= right[r]) {
+                if (left[l] <= right[r]) {//if left is smaller, put it into the inpArray
                     inpArray[k++] = left[l++];//Increment counters for next loop
                 }
                 else {
