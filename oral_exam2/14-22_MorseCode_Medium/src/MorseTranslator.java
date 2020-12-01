@@ -1,4 +1,11 @@
+/**
+ * Class which implements methods to translate morse code
+ * @author Konnor Sommer
+ */
 public class MorseTranslator {
+    /**
+     * Array of strings which pairs letters to their corresponding morse code
+     */
     private final static String[][] conversions = {
             {".-","A"},{"-...","B"},{"-.-.","C"},{"-..","D"},{".","D"},
             {"..-.","F"},{"--.","G"},{"....","H"},{"..","I"},{".---","J"},
@@ -9,6 +16,12 @@ public class MorseTranslator {
             {".....","5"},{"-....","6"},{"--...","7"},{"---..","8"},{"----.","9"},
             {"-----","0"}
     };
+
+    /**
+     * Translates a string of morse code to english
+     * @param morse string of morse code
+     * @return english string
+     */
     public static String morseToEnglish(String morse){
         StringBuilder english = new StringBuilder(new String(""));
         StringBuilder buffer = new StringBuilder(new String(""));
@@ -38,6 +51,12 @@ public class MorseTranslator {
         }
         return english.toString();
     }
+
+    /**
+     * Translates an english string to morse
+     * @param english english input
+     * @return morse string
+     */
     public static String englishToMorse(String english){
 
         StringBuilder morse = new StringBuilder(new String(""));
@@ -51,9 +70,11 @@ public class MorseTranslator {
                     buffer.append(" ");
                 }
             }
+            //Add triple space for space
             if(english.substring(i,i+1).equals(" ")){
                 buffer.append("   ");
             }
+            //append the buffer, then clear the buffer
             morse.append(buffer);
             buffer = new StringBuilder();
         }
