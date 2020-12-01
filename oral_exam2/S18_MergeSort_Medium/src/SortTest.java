@@ -8,6 +8,9 @@ public class SortTest {
             testArray[i] = rand.nextInt(1000);
             System.out.println(testArray[i]);
         }
-
+        MergeSort.mergeSort(testArray);
+        for(int i = 0; i<100; i++){
+            System.out.println(testArray[i]);
+        }
     }
 }
